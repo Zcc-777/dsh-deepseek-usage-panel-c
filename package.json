@@ -1,0 +1,66 @@
+{
+  "name": "dsh-deepseek-usage-panel",
+  "version": "0.2.4-c.1",
+  "description": "Floating macOS-glass DeepSeek usage panel for the DSH web UI: official balance, today's spend (balance-ledger), peak/off-peak countdown, detailed token usage, 24 h trend and per-model stats — without opening platform.deepseek.com/usage. · DSH 毛玻璃用量面板：官方余额 + 今日消费 + 峰谷价倒计时 + Token 明细",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zcc-777/dsh-deepseek-usage-panel-c.git"
+  },
+  "homepage": "https://github.com/Zcc-777/dsh-deepseek-usage-panel-c",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "usage",
+    "balance",
+    "tokens",
+    "quota",
+    "panel",
+    "deepseek-harness",
+    "dsh-usage",
+    "web",
+    "peak-off-peak",
+    "deepseek-pricing"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "id": "dsh-deepseek-usage-panel",
+    "name": "用量面板 C",
+    "version": "0.2.4-c.1",
+    "repo": "Zcc-777/dsh-deepseek-usage-panel-c",
+    "permissions": "读取配置的 DeepSeek API Key 轮询 GET /user/balance；监听 session/event 用量；注册 /dsh-usage/api HTTP 路由；在数据目录保存滚动用量历史",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
