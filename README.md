@@ -60,8 +60,10 @@ bundle，把 `dsh-deepseek-usage-panel` 追加到 profile `package.json` 的
 ```yaml
 version: 1
 refs:
-  DEEPSEEK_API_KEY: sk-你的key
+  DEEPSEEK_API_KEY: "<你的 DeepSeek API Key>"
 ```
+
+> 不要把真实 Key 写入仓库或提交到 Git；只放在本机 `~/.dsh/.credentials.yaml` 或环境变量里。
 
 也可设置环境变量 `DEEPSEEK_API_KEY` 或 `DSH_USAGE_HUD_API_KEY`。
 
