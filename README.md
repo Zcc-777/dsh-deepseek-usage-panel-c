@@ -41,6 +41,9 @@ token usage (today / session / 24 h smooth trend / per-model).
 ### 安装
 
 ```bash
+# 如果已安装原版，先卸载（本分支沿用同一包名/插件 ID）
+dsh plugin --profile web remove dsh-deepseek-usage-panel
+
 # 方式一：从本定制分支在线安装（推荐）
 dsh plugin --profile web add "github:Zcc-777/dsh-deepseek-usage-panel-c"
 
